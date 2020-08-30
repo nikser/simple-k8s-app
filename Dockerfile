@@ -31,7 +31,7 @@ RUN set -eux; \
     go build -ldflags "${GO_LDFLAGS} ${GO_XFLAGS}" -o /go/bin/myapp .
 
 # This results in a single layer image
-FROM scratch
+FROM alpine
 
 COPY --from=builder /go/bin/myapp /
 
